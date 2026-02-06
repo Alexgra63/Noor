@@ -32,11 +32,6 @@ const NavItem: React.FC<{
     <span className={`relative z-10 text-[10px] font-bold uppercase tracking-widest transition-all duration-300 ${isActive ? 'text-yellow-400 opacity-100 translate-y-0.5' : 'text-gray-500 opacity-0 translate-y-2 group-hover:opacity-60 group-hover:translate-y-1'}`}>
       {label}
     </span>
-
-    {/* Active Dot */}
-    {isActive && (
-      <div className="absolute bottom-1 w-1 h-1 bg-yellow-400 rounded-full shadow-[0_0_8px_rgba(250,204,21,0.8)] animate-pulse"></div>
-    )}
   </button>
 );
 

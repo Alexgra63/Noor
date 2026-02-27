@@ -118,7 +118,7 @@ const App: React.FC = () => {
         onMenuClick={() => setIsSidebarOpen(true)}
       />
       
-      <main className="flex-grow w-full max-w-lg mx-auto px-5 pb-28">
+      <main className="flex-grow w-full max-w-lg mx-auto px-4 pb-24">
         {renderView()}
       </main>
       

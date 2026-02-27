@@ -49,10 +49,10 @@ const DuaJournal: React.FC = () => {
   const filteredEntries = journal.filter(entry => entry.status === activeTab);
 
   return (
-    <div className="space-y-8 animate-fade-in pb-10">
+    <div className="space-y-6 animate-fade-in pb-6">
       <div className="flex justify-between items-end">
         <div>
-            <h1 className="text-4xl font-black text-white tracking-tight">My <span className="text-yellow-400">Journal</span></h1>
+            <h1 className="text-3xl font-black text-white tracking-tight">My <span className="text-yellow-400">Journal</span></h1>
             <p className="text-[10px] text-gray-500 uppercase tracking-[0.4em] font-medium mt-1">Sacred Conversations</p>
         </div>
         <button 
@@ -79,13 +79,13 @@ const DuaJournal: React.FC = () => {
       <div className="flex bg-[#1b1b2f] rounded-[2rem] p-1.5 shadow-inner border border-white/5">
         <button 
             onClick={() => setActiveTab('pending')} 
-            className={`flex-1 py-3.5 rounded-[1.5rem] text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 ${activeTab === 'pending' ? 'bg-[#0c1021] text-yellow-400 shadow-xl border border-white/10' : 'text-gray-500 hover:text-gray-300'}`}
+            className={`flex-1 py-2.5 rounded-[1.5rem] text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 ${activeTab === 'pending' ? 'bg-[#0c1021] text-yellow-400 shadow-xl border border-white/10' : 'text-gray-500 hover:text-gray-300'}`}
         >
             Active Duas
         </button>
         <button 
             onClick={() => setActiveTab('answered')} 
-            className={`flex-1 py-3.5 rounded-[1.5rem] text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 ${activeTab === 'answered' ? 'bg-[#0c1021] text-emerald-400 shadow-xl border border-white/10' : 'text-gray-500 hover:text-gray-300'}`}
+            className={`flex-1 py-2.5 rounded-[1.5rem] text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 ${activeTab === 'answered' ? 'bg-[#0c1021] text-emerald-400 shadow-xl border border-white/10' : 'text-gray-500 hover:text-gray-300'}`}
         >
             Blessings
         </button>
@@ -95,9 +95,9 @@ const DuaJournal: React.FC = () => {
         {filteredEntries.length > 0 ? filteredEntries.map(entry => (
           <div 
             key={entry.id} 
-            className={`group relative overflow-hidden rounded-[2.5rem] border border-white/5 transition-all duration-500 hover:shadow-2xl ${activeTab === 'answered' ? 'bg-gradient-to-br from-emerald-950/20 to-emerald-900/10 hover:border-emerald-500/30' : 'bg-white/5 hover:bg-white/[0.08] hover:border-yellow-400/30'}`}
+            className={`group relative overflow-hidden rounded-[2rem] border border-white/5 transition-all duration-500 hover:shadow-2xl ${activeTab === 'answered' ? 'bg-gradient-to-br from-emerald-950/20 to-emerald-900/10 hover:border-emerald-500/30' : 'bg-white/5 hover:bg-white/[0.08] hover:border-yellow-400/30'}`}
           >
-            <div className="p-8 space-y-4">
+            <div className="p-6 space-y-4">
                 <div className="flex justify-between items-start">
                     <h3 className="font-bold text-xl text-white tracking-tight leading-tight group-hover:text-yellow-400 transition-colors">{entry.title}</h3>
                     <div className="flex items-center gap-1.5">
@@ -142,14 +142,14 @@ const DuaJournal: React.FC = () => {
 
       <button 
         onClick={() => setShowForm(true)} 
-        className="fixed bottom-28 right-6 bg-yellow-400 text-gray-900 w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl shadow-yellow-400/30 transform hover:scale-110 active:scale-95 transition-all z-40 border-4 border-[#0c1021]"
+        className="fixed bottom-24 right-6 bg-yellow-400 text-gray-900 w-14 h-14 rounded-2xl flex items-center justify-center shadow-2xl shadow-yellow-400/30 transform hover:scale-110 active:scale-95 transition-all z-40 border-4 border-[#0c1021]"
       >
-        <PlusCircleIcon className="w-8 h-8"/>
+        <PlusCircleIcon className="w-6 h-6"/>
       </button>
 
       {showForm && (
         <div className="fixed inset-0 bg-black/95 backdrop-blur-3xl z-50 flex items-center justify-center p-6 animate-fade-in" onClick={() => setShowForm(false)}>
-            <form onSubmit={addEntry} className="bg-[#0c1021] p-10 rounded-[3rem] w-full max-w-md space-y-8 border border-white/5 shadow-2xl" onClick={e => e.stopPropagation()}>
+            <form onSubmit={addEntry} className="bg-[#0c1021] p-6 rounded-[2rem] w-full max-w-md space-y-6 border border-white/5 shadow-2xl" onClick={e => e.stopPropagation()}>
                 <div className="flex justify-between items-center">
                     <div>
                         <h2 className="text-2xl font-black text-white tracking-tight">New <span className="text-yellow-400">Entry</span></h2>
@@ -186,7 +186,7 @@ const DuaJournal: React.FC = () => {
 
                 <button 
                     type="submit" 
-                    className="w-full py-5 bg-yellow-400 text-gray-900 font-black rounded-2xl shadow-xl shadow-yellow-400/10 hover:bg-yellow-300 transition-all active:scale-95 uppercase tracking-widest text-xs"
+                    className="w-full py-4 bg-yellow-400 text-gray-900 font-black rounded-2xl shadow-xl shadow-yellow-400/10 hover:bg-yellow-300 transition-all active:scale-95 uppercase tracking-widest text-xs"
                 >
                     Save to Journal
                 </button>

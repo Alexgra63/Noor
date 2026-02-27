@@ -55,9 +55,9 @@ const DailyDua: React.FC<DailyDuaProps> = ({ onEnterSleepMode }) => {
   });
 
   return (
-    <div className="space-y-8">
-        <div className="py-2">
-            <h2 className="text-4xl font-black text-white leading-tight tracking-tight">
+    <div className="space-y-6">
+        <div className="py-1">
+            <h2 className="text-3xl font-black text-white leading-tight tracking-tight">
                 Welcome to <br /> 
                 <span className="text-yellow-400">Your Sanctuary</span>
             </h2>
@@ -68,12 +68,12 @@ const DailyDua: React.FC<DailyDuaProps> = ({ onEnterSleepMode }) => {
         <div className="relative group">
             <input
                 type="text"
-                className="block w-full pl-6 pr-12 py-5 border border-white/5 rounded-[2rem] bg-[#1b1b2f] text-gray-100 placeholder-gray-600 focus:outline-none focus:ring-1 focus:ring-yellow-400/20 transition-all duration-500 shadow-2xl"
+                className="block w-full pl-5 pr-10 py-4 border border-white/5 rounded-[2rem] bg-[#1b1b2f] text-gray-100 placeholder-gray-600 focus:outline-none focus:ring-1 focus:ring-yellow-400/20 transition-all duration-500 shadow-2xl"
                 placeholder="Search Duas by keyword..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
             />
-            <div className="absolute inset-y-0 right-0 pr-5 flex items-center">
+            <div className="absolute inset-y-0 right-0 pr-4 flex items-center">
                 {searchQuery ? (
                   <button onClick={() => setSearchQuery('')} className="text-gray-500 hover:text-white transition-colors">
                     <XMarkIcon className="w-5 h-5" />
@@ -103,14 +103,14 @@ const DailyDua: React.FC<DailyDuaProps> = ({ onEnterSleepMode }) => {
             {/* Daily Feature Card - Improved UI */}
             <div 
               onClick={() => setIsDuaModalOpen(true)}
-              className="relative rounded-[2.5rem] overflow-hidden shadow-2xl min-h-[320px] w-full flex flex-col group cursor-pointer transition-all duration-700 hover:shadow-yellow-400/5"
+              className="relative rounded-[2rem] overflow-hidden shadow-2xl min-h-[280px] w-full flex flex-col group cursor-pointer transition-all duration-700 hover:shadow-yellow-400/5"
             >
                 {/* Background layers */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#1b1b2f] via-[#0c1021] to-[#0c1021] z-0"></div>
                 <div className="absolute -top-24 -right-24 w-64 h-64 bg-yellow-400/5 blur-[100px] rounded-full group-hover:bg-yellow-400/10 transition-all duration-700"></div>
                 
-                <div className="relative z-10 p-8 h-full flex flex-col">
-                   <div className="flex justify-between items-center mb-6">
+                <div className="relative z-10 p-6 h-full flex flex-col">
+                   <div className="flex justify-between items-center mb-4">
                       <div className="flex items-center gap-2">
                         <span className="w-8 h-px bg-yellow-400/40"></span>
                         <span className="text-[10px] text-yellow-400 font-black uppercase tracking-[0.4em]">Daily Noor</span>
@@ -120,14 +120,14 @@ const DailyDua: React.FC<DailyDuaProps> = ({ onEnterSleepMode }) => {
                       </div>
                    </div>
 
-                   <h3 className="text-2xl font-black text-white mb-8 tracking-tight">Dua of the Day</h3>
+                   <h3 className="text-xl font-black text-white mb-6 tracking-tight">Dua of the Day</h3>
                    
                    {dailyDua && (
-                       <div className="flex-grow flex flex-col justify-center space-y-6">
-                           <p className="font-arabic text-4xl text-right leading-relaxed text-white drop-shadow-sm group-hover:text-yellow-400/90 transition-colors duration-500">
+                       <div className="flex-grow flex flex-col justify-center space-y-4">
+                           <p className="font-arabic text-3xl text-right leading-relaxed text-white drop-shadow-sm group-hover:text-yellow-400/90 transition-colors duration-500">
                              {dailyDua.arabic}
                            </p>
-                           <div className="bg-[#0c1021]/60 backdrop-blur-xl rounded-2xl p-5 border border-white/5 group-hover:border-yellow-400/20 transition-all duration-500">
+                           <div className="bg-[#0c1021]/60 backdrop-blur-xl rounded-2xl p-4 border border-white/5 group-hover:border-yellow-400/20 transition-all duration-500">
                                <p className="text-gray-300 text-sm italic leading-relaxed line-clamp-2">
                                  "{dailyDua.translation_en}"
                                </p>
@@ -142,14 +142,14 @@ const DailyDua: React.FC<DailyDuaProps> = ({ onEnterSleepMode }) => {
 
             <button
                 onClick={onEnterSleepMode}
-                className="w-full flex items-center justify-between bg-white/5 backdrop-blur-sm text-gray-100 px-8 py-8 rounded-[2.5rem] border border-white/5 group hover:bg-indigo-500/5 hover:border-indigo-500/20 transition-all duration-500 shadow-xl"
+                className="w-full flex items-center justify-between bg-white/5 backdrop-blur-sm text-gray-100 px-6 py-6 rounded-[2rem] border border-white/5 group hover:bg-indigo-500/5 hover:border-indigo-500/20 transition-all duration-500 shadow-xl"
             >
-                <div className="flex items-center gap-5">
-                    <div className="p-4 bg-indigo-500/10 rounded-2xl text-indigo-400 group-hover:scale-110 transition-transform duration-500">
-                        <MoonIcon className="w-8 h-8"/>
+                <div className="flex items-center gap-4">
+                    <div className="p-3 bg-indigo-500/10 rounded-2xl text-indigo-400 group-hover:scale-110 transition-transform duration-500">
+                        <MoonIcon className="w-6 h-6"/>
                     </div>
                     <div className="text-left">
-                      <span className="block text-xl font-black tracking-tight">Sleep Mode</span>
+                      <span className="block text-lg font-black tracking-tight">Sleep Mode</span>
                       <span className="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Ambient Recitations</span>
                     </div>
                 </div>

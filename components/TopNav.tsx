@@ -33,17 +33,17 @@ const TopNav: React.FC<TopNavProps> = ({ title, hasNotification, onBellClick, on
   }, []);
 
   return (
-    <header className="sticky top-0 z-40 w-full px-5 py-6 flex items-center justify-between bg-transparent backdrop-blur-sm">
+    <header className="sticky top-0 z-40 w-full px-4 py-4 flex items-center justify-between bg-transparent backdrop-blur-sm">
       <button 
         onClick={onMenuClick}
         className="p-1 text-gray-400 hover:text-white transition-colors"
       >
-        <MenuIcon className="w-7 h-7" />
+        <MenuIcon className="w-6 h-6" />
       </button>
 
       <div className="flex flex-col items-center">
-        <h1 className="text-2xl font-bold tracking-tight text-white flex items-center gap-1">
-          {title} <span className="text-yellow-400 text-3xl leading-none">.</span>
+        <h1 className="text-xl font-bold tracking-tight text-white flex items-center gap-1">
+          {title} <span className="text-yellow-400 text-2xl leading-none">.</span>
           {streak > 0 && (
             <div className="ml-2 flex items-center gap-1 bg-yellow-400/10 px-2 py-0.5 rounded-full border border-yellow-400/20 animate-pulse">
               <SparklesIcon className="w-3 h-3 text-yellow-400" />
@@ -57,7 +57,7 @@ const TopNav: React.FC<TopNavProps> = ({ title, hasNotification, onBellClick, on
         onClick={onBellClick}
         className="relative p-1 text-gray-400 hover:text-white transition-colors"
       >
-        <BellIcon className="w-7 h-7" />
+        <BellIcon className="w-6 h-6" />
         {hasNotification && (
           <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full border-2 border-[#0c1021]"></span>
         )}

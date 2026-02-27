@@ -94,12 +94,12 @@ const ZikrCounter: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-full text-center space-y-8 relative py-4">
+    <div className="flex flex-col items-center justify-center h-full text-center space-y-6 relative py-2">
       <div className="flex items-center justify-center gap-4">
-        <h1 className="text-3xl font-black text-white tracking-tight">Zikr <span className="text-yellow-400">Counter</span></h1>
+        <h1 className="text-2xl font-black text-white tracking-tight">Zikr <span className="text-yellow-400">Counter</span></h1>
         <button 
           onClick={() => setShowReminderModal(true)}
-          className={`p-3 rounded-2xl transition-all duration-300 shadow-lg ${reminderSettings.enabled ? 'bg-yellow-400 text-gray-900 shadow-yellow-400/20' : 'bg-gray-800 text-gray-400 hover:text-white'}`}
+          className={`p-2 rounded-2xl transition-all duration-300 shadow-lg ${reminderSettings.enabled ? 'bg-yellow-400 text-gray-900 shadow-yellow-400/20' : 'bg-gray-800 text-gray-400 hover:text-white'}`}
         >
           <BellIcon className="w-5 h-5" />
         </button>
@@ -110,7 +110,7 @@ const ZikrCounter: React.FC = () => {
           <button 
             key={option.type}
             onClick={() => setSelectedZikr(option.type)}
-            className={`px-5 py-2.5 text-xs font-bold rounded-xl transition-all duration-500 uppercase tracking-widest ${
+            className={`px-4 py-2 text-xs font-bold rounded-xl transition-all duration-500 uppercase tracking-widest ${
                 selectedZikr === option.type 
                 ? 'bg-yellow-400 text-gray-900 shadow-md transform scale-105' 
                 : 'text-gray-500 hover:text-gray-300'
@@ -121,7 +121,7 @@ const ZikrCounter: React.FC = () => {
         ))}
       </div>
       
-      <div className="relative w-72 h-72 md:w-96 md:h-96 flex items-center justify-center group">
+      <div className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center group">
         {/* Ambient Glow */}
         <div className={`absolute inset-0 bg-yellow-400/5 rounded-full blur-[60px] transition-opacity duration-500 ${isPressed ? 'opacity-100' : 'opacity-40'}`}></div>
         
@@ -131,12 +131,12 @@ const ZikrCounter: React.FC = () => {
         {/* Inner Counter Area */}
         <button
           onClick={handleCount}
-          className={`relative z-10 w-64 h-64 md:w-80 md:h-80 flex flex-col items-center justify-center bg-gray-900 rounded-full cursor-pointer select-none transition-all duration-75 border border-white/5 active:scale-95 shadow-inner ${isPressed ? 'bg-gray-800' : ''}`}
+          className={`relative z-10 w-56 h-56 md:w-72 md:h-72 flex flex-col items-center justify-center bg-gray-900 rounded-full cursor-pointer select-none transition-all duration-75 border border-white/5 active:scale-95 shadow-inner ${isPressed ? 'bg-gray-800' : ''}`}
         >
           <div className="absolute top-1/4">
-            <span className="font-arabic text-4xl text-yellow-400/60 transition-colors group-hover:text-yellow-400">{zikrOptions.find(z => z.type === selectedZikr)?.arabic}</span>
+            <span className="font-arabic text-3xl text-yellow-400/60 transition-colors group-hover:text-yellow-400">{zikrOptions.find(z => z.type === selectedZikr)?.arabic}</span>
           </div>
-          <span className="text-8xl font-black text-white tracking-tighter tabular-nums drop-shadow-lg">{currentCount}</span>
+          <span className="text-7xl font-black text-white tracking-tighter tabular-nums drop-shadow-lg">{currentCount}</span>
           <div className="absolute bottom-1/4 opacity-0 group-hover:opacity-100 transition-opacity">
             <span className="text-[10px] font-black text-gray-600 uppercase tracking-[0.4em]">Tap to count</span>
           </div>

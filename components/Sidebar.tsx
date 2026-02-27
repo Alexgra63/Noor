@@ -120,11 +120,11 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         onClick={onClose}
       />
       
-      <div className={`fixed top-0 left-0 h-full w-80 bg-[#0c1021] z-[60] shadow-2xl transform transition-transform duration-500 ease-out border-r border-white/5 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-        <div className="p-8 h-full flex flex-col">
-          <div className="flex justify-between items-center mb-12">
+      <div className={`fixed top-0 left-0 h-full w-72 bg-[#0c1021] z-[60] shadow-2xl transform transition-transform duration-500 ease-out border-r border-white/5 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+        <div className="p-6 h-full flex flex-col">
+          <div className="flex justify-between items-center mb-8">
             <div>
-              <h2 className="text-3xl font-bold text-white tracking-tighter">Noor <span className="text-yellow-400">.</span></h2>
+              <h2 className="text-2xl font-bold text-white tracking-tighter">Noor <span className="text-yellow-400">.</span></h2>
               <p className="text-[10px] text-gray-500 uppercase tracking-[0.3em] mt-1">Peace & Simplicity</p>
             </div>
             <button onClick={onClose} className="p-2 text-gray-500 hover:text-white transition-colors bg-white/5 rounded-full">

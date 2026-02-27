@@ -60,7 +60,7 @@ const DuaCategories: React.FC = () => {
 
   return (
     <div className="space-y-6 animate-fade-in">
-      <h1 className="text-3xl font-bold text-white mb-8">Categories</h1>
+      <h1 className="text-3xl font-bold text-white mb-6">Categories</h1>
       <div className="grid grid-cols-2 gap-4">
         {categories.map((category) => {
           const Icon = getCategoryIcon(category.name);
@@ -68,10 +68,10 @@ const DuaCategories: React.FC = () => {
               <button
                 key={category.name}
                 onClick={() => setSelectedCategory(category)}
-                className="p-6 rounded-3xl bg-white/5 border border-white/5 hover:border-yellow-400/30 transition-all text-center flex flex-col items-center gap-4"
+                className="p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-yellow-400/30 transition-all text-center flex flex-col items-center gap-4"
               >
-                <div className="p-4 bg-yellow-400/10 rounded-2xl text-yellow-400">
-                  <Icon className="w-8 h-8" />
+                <div className="p-3 bg-yellow-400/10 rounded-2xl text-yellow-400">
+                  <Icon className="w-6 h-6" />
                 </div>
                 <h2 className="text-sm font-bold text-white">{category.name.replace(/^[^\w\s]+/, '').trim()}</h2>
               </button>
